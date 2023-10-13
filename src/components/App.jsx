@@ -19,7 +19,7 @@ export const App = () => {
     const total = countTotalFeedback
     const result = (feedback.good / total) * 100
     return result || 0
-  }, [feedback.good, feedback.neutral, feedback.bad])
+  }, [feedback.good, countTotalFeedback])
 
   function onLeaveFeedback (feedback) {
     setFeedback(currentFeedback => ({
