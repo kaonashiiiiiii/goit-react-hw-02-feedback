@@ -1,0 +1,21 @@
+.options {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: #ffffff;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 1px solid #DCDCDC;
+  cursor: pointer;
+}
+
+button::first-letter {
+  text-transform: uppercase;
+}
