@@ -1,12 +1,11 @@
 import React from 'react'
-import styles from './feedbackOptions.module.css'
 
 const Statistics = (props) => {
   const { good, neutral, bad, total, positivePercentage } = props
 
   return (
     <div>
-      <ul className={styles.statlist}>
+      <ul>
         <li key='good'>Good: {good}</li>
         <li key='neutral'>Neutral: {neutral}</li>
         <li key='bad'>Bad: {bad}</li>
