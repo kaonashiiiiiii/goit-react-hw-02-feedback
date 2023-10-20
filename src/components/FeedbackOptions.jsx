@@ -1,27 +1,31 @@
-import React, { memo, useEffect, useState } from 'react'
+import { Component }  from 'react'
 import styles from './feedbackOptions.module.css'
-const FeedbackOptions = memo((props) => {
-  const { options, onLeaveFeedback} = props
-  const [optionsArray, setOptionsArray] = useState([])
+class FeedbackOptions extends Component {
+  constructor(props) {
+    super(props);
+
+    console.log(this.props);
+
+    this.state = {
+      optionsArray: []
+    };
+  }
   
-  function mapOptionsToArray (options) {
+  mapOptionsToArray (options) {
     return Object.keys(options)
   }
 
-  useEffect(() => {
-    const resultArray = mapOptionsToArray(options)
-    setOptionsArray(resultArray)
-  }, [options])
-
-  return (
-    <div>
-      <div className={styles.options}>
-        {optionsArray.map((option) => (
-          <button key={option} onClick={() => onLeaveFeedback(option)}>{option}</button>
-        ))}
+  render () {
+    return (
+      <div>
+        <div className={styles.options}>
+          {this.mapOptionsToArray(this.props.options || {}).map((option) => (
+            <button key={option} onClick={() => this.props.onLeaveFeedback(option)}>{option}</button>
+          ))}
+        </div>
       </div>
-    </div>
-  )
-})
+    )
+  }
+}
 
 export default FeedbackOptions
